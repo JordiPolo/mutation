@@ -7,7 +7,22 @@ defmodule Mutation.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: description(),
+     package: package(),
      deps: deps()]
+  end
+
+  defp description do
+    """
+    Mutation testing for Elixir.
+    """
+  end
+
+  defp package do
+    [files: ["lib", "mix.exs", "README.md", "LICENSE"],
+      maintainers: ["Jordi Polo Carres"],
+      licenses: ["Apache 2.0"],
+      links: %{"GitHub" => "https://github.com/jordipolo/mutation"}]
   end
 
   # Configuration for the OTP application
@@ -28,6 +43,8 @@ defmodule Mutation.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:ex_doc, "~> 0.14", only: :dev}
+    ]
   end
 end

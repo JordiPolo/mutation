@@ -9,7 +9,7 @@ defmodule Mutation.TestFormatter do
   end
 
   # TODO: Why is this called here but not in https://github.com/elixir-lang/elixir/blob/master/lib/ex_unit/lib/ex_unit/cli_formatter.ex
-  def handle_event(x, y) do
+  def handle_event(_, _) do
     {:ok, :continue}
   end
 
